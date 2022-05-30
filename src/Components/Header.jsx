@@ -106,18 +106,19 @@ const Nav = styled.nav`
   right: 0;
   height: 70px;
   background-color: #090b13;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 36px;
+  padding: 0px 36px;
   letter-spacing: 16px;
   z-index: 3;
 `;
+
 const Logo = styled.a`
   padding: 0;
   width: 80px;
   margin-top: 4px;
-  max-height: 70px;
+  max-height: 60px;
   font-size: 0;
   display: inline-block;
   img {
@@ -125,6 +126,7 @@ const Logo = styled.a`
     width: 100%;
   }
 `;
+
 const NavMenu = styled.div`
   align-items: center;
   display: flex;
@@ -164,7 +166,7 @@ const NavMenu = styled.div`
         opacity: 0;
         position: absolute;
         right: 0px;
-        transform-origin: left center;
+        transform-origin: left;
         transform: scaleX(0);
         transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         visibility: hidden;
@@ -179,10 +181,11 @@ const NavMenu = styled.div`
       }
     }
   }
-  /* @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
-  } */
+  }
 `;
+
 const Login = styled.a`
   background-color: rgba(0, 0, 0, 0.6);
   padding: 8px 16px;
@@ -197,9 +200,13 @@ const Login = styled.a`
     border-color: transparent;
   }
 `;
+
 const UserImg = styled.img`
+  border-radius: 50%;
+  width: 100%;
   height: 100%;
 `;
+
 const DropDown = styled.div`
   position: absolute;
   top: 48px;
@@ -214,7 +221,6 @@ const DropDown = styled.div`
   width: 100px;
   opacity: 0;
 `;
-
 const SignOut = styled.div`
   position: relative;
   height: 48px;
@@ -223,11 +229,6 @@ const SignOut = styled.div`
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  ${UserImg} {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-  }
   &:hover {
     ${DropDown} {
       opacity: 1;
@@ -235,6 +236,4 @@ const SignOut = styled.div`
     }
   }
 `;
-
-
 export default Header;

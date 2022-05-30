@@ -1,12 +1,10 @@
 import React from 'react';
-import {
-  BrowserRouter as Router, Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Components/Login';
 import Header from './Components/Header';
 import Home from './Components/Home';
+import Detail from './Components/Detail';
 
 function App() {
   return (
@@ -14,17 +12,12 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          {/* <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route> */}
-          {/* <Route path="/detail/:id">
-            <Detail />
-          </Route> */}
+          <Route path="/detail/:id" element={<Detail />} /> */}
         </Routes>
       </Router>
     </div>
