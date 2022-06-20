@@ -17,12 +17,13 @@ const Home = (props) => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
   const navigation = useNavigate();
-  let recommends = [];
+  
+
+  useEffect(() => {
+    let recommends = [];
   let newDisneys = [];
   let originals = [];
   let trending = [];
-
-  useEffect(() => {
     if (!userName) {
       console.log("No user found, redirecting to SignIn page");
       navigation("/");
@@ -32,14 +33,15 @@ const Home = (props) => {
 
     db.collection("movies").onSnapshot((snapshot) => {
       snapshot.docs.map((doc) => {
-        console.log(recommends);
+        // console.log(...recommends);
         switch (doc.data().type) {
           case "recommend":
             recommends = [...recommends, { id: doc.id, ...doc.data() }];
             break;
 
           case "new":
-            newDisneys = [...newDisneys,
+            newDisneys = [
+              ...newDisneys,
               { id: doc.id, ...doc.data() }
             ];
             break;
@@ -55,6 +57,7 @@ const Home = (props) => {
             break;
         }
       });
+      console.log(newDisneys);
 
       dispatch(
         setMovies({
@@ -65,7 +68,8 @@ const Home = (props) => {
         })
       );
     });
-  }, [userName]);
+  },
+    [userName]);
 
   return (
     <Container>
