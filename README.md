@@ -8,6 +8,8 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Images
+
 ![Screensho2](https://github.com/the-yash-rajput/disney-clone/blob/master/public/images/pic0.png)
 ![Screensho2](https://github.com/the-yash-rajput/disney-clone/blob/master/public/images/Pic1.png)
 ![Screensho2](https://github.com/the-yash-rajput/disney-clone/blob/master/public/images/pic3.png)
